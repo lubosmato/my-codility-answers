@@ -15,12 +15,14 @@ Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [1..2,147,483,647].
 */
+
 #include <algorithm>
 
 int solution(int input) {
   int biggestGap = 0;
   int gaps = 0;
   bool gapStarted = false;
+
   while (input != 0) {
     if ((input & 1) == 1) {
       biggestGap = std::max(biggestGap, gaps);
@@ -33,5 +35,6 @@ int solution(int input) {
     }
     input >>= 1;
   }
+  
   return biggestGap;
 }
